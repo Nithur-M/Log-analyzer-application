@@ -1,22 +1,36 @@
 package kln.se.ass2;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.logging.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Logfilehandler {
-    String path;
+public abstract class Logfilehandler {
 
-    public Logfilehandler(String path) {
 
+    public  List<Logvariables> readfileandstore(String logfilepath) {
+
+        List<Logvariables> loglist = new ArrayList<Logvariables>();
+        Logvariables logvariables;
+
+        try {
+            FileReader fr = new FileReader(logfilepath);
+            BufferedReader br = new BufferedReader(fr);
+            String line;
+            String previousline = "";
+
+            while ((line = br.readLine()) != null) {
+                String[] strings= line.split(" ");
+                loglist.add(new Logvariables(strings[0],strings[1],strings[2]));
+
+                previousline = line;
+            }
+
+        } catch (IOException ioException) {
+            System.out.println(ioException);
+        }
+
+        return loglist;
     }
-
-    public void readingfile() {
-
-
-
-
-    }
-
 }
