@@ -8,6 +8,11 @@ import java.util.Scanner;
 public class Main {
     
     public static void main(String[] args) throws FileNotFoundException {
+        //getting mail address
+        //Maillist ml=new Maillist();
+        //ml.getmailaddress();
+
+
 
         Scanner input = new Scanner(System.in);
         String logfilepath;
