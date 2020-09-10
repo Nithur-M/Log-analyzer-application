@@ -2,9 +2,9 @@ package kln.se.ass2;
 
 public class Logvariables {
 
-    String timestatmp;
-    String loglevel;
-    String message;
+   private String timestatmp;
+   private String loglevel;
+   private String message;
 
     public String getTimestatmp() {
         return timestatmp;

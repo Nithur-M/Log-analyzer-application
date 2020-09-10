@@ -9,17 +9,17 @@ public class Firstreadinglog extends Logfilehandler {
 
         List<Logvariables> loglines = super.readfileandstore(logfilepath);
         for (Logvariables s : loglines) {
-            if ((s.loglevel).contains("ERROR")) {
-                System.out.println("Error Found");
+            if ((s.getLoglevel()).contains("ERROR")) {
+
                 //Calling Email Class
 
             }
-            Textfilehandler textfilehandler = new Textfilehandler();
+
 
         }
         Textfilehandler textfilehandler = new Textfilehandler();
         Logvariables logvariables = loglines.get(loglines.size() - 1);
-        textfilehandler.writetofile(logvariables.timestatmp);
+        textfilehandler.writetofile(logvariables.getTimestatmp());
     }
 
 

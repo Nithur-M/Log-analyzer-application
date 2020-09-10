@@ -15,9 +15,9 @@ public class Morereadinglog extends Logfilehandler {
 
             for (Logvariables b : loglines) {
 
-                if((b.timestatmp).equals(pretimestamp)) {
+                if((b.getTimestatmp()).equals(pretimestamp)) {
                     state=1;
-                    System.out.println(state);
+
                     continue;
                 }
                 if(state==1){
@@ -35,7 +35,7 @@ public class Morereadinglog extends Logfilehandler {
          }
          else{
               //Text already created new path files
-             if(!(pretimestamp.equals(loglines.get(loglines.size() - 1).timestatmp))) {
+             if(!(pretimestamp.equals(loglines.get(loglines.size() - 1).getTimestatmp()))) {
                  System.out.println("Text file already created new path files");
                  return loglines;
              }
@@ -53,8 +53,8 @@ public class Morereadinglog extends Logfilehandler {
         void errorchecking(List<Logvariables> newlog) {
 
             for (Logvariables s : newlog) {
-                if ((s.loglevel).contains("ERROR")) {
-                    System.out.println("Error Found");
+                if ((s.getLoglevel()).contains("ERROR")) {
+
                     //Calling Email Class
 
                 }
@@ -62,7 +62,7 @@ public class Morereadinglog extends Logfilehandler {
 
             Logvariables logvariables = newlog.get(newlog.size() - 1);
             Textfilehandler textfilehandler = new Textfilehandler();
-            textfilehandler.writetofile(logvariables.timestatmp);
+            textfilehandler.writetofile(logvariables.getTimestatmp());
         }
 
 
