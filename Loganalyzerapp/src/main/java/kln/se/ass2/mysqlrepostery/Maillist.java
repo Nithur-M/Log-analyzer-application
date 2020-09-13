@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 public class Maillist {
 
-    public List<String> getmailaddress(){
+    public static List<String> getmailaddress(){
 
         List<String> emails = new ArrayList<String>();
         PreparedStatement st;

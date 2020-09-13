@@ -1,5 +1,6 @@
 package kln.se.ass2.logfile;
 
+import kln.se.ass2.SendMail;
 import kln.se.ass2.logvariable.Log;
 import kln.se.ass2.logvariable.Logvariables;
 import kln.se.ass2.Textfilehandler;
@@ -67,7 +68,7 @@ public class Morereadinglog extends Logfilehandler {
             for (Logvariables s : newlog) {
                 if ((s.getLoglevel()).contains("ERROR")) {
 
-                    //Calling Email Class
+                    SendMail sendmail = new SendMail();
 
                 }
             }

@@ -1,5 +1,6 @@
 package kln.se.ass2.logfile;
 
+import kln.se.ass2.SendMail;
 import kln.se.ass2.logvariable.Log;
 import kln.se.ass2.logvariable.Logvariables;
 import kln.se.ass2.Textfilehandler;
@@ -20,12 +21,8 @@ public class Firstreadinglog extends Logfilehandler {
         List<Logvariables> loglines = super.readlogfile(logfilepath);
         for (Logvariables s : loglines) {
             if ((s.getLoglevel()).contains("ERROR")) {
-
-                //Calling Email Class
-
+                SendMail.sendmail();
             }
-
-
         }
 
         logvariables = loglines.get(loglines.size() - 1);
