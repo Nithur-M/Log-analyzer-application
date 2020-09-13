@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.maven.plugins:maven-compiler-plugin:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/maven/plugins/maven-compiler-plugin/unknown/maven-compiler-plugin-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/maven/plugins/maven-compiler-plugin/unknown/maven-compiler-plugin-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/maven/plugins/maven-compiler-plugin/unknown/maven-compiler-plugin-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
