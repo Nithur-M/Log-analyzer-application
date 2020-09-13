@@ -40,8 +40,7 @@ public class Textfilehandler {
          }
      }
 
-     public String readinglastline() throws FileNotFoundException {
-         String strLine = null;
+     public String readinglastline() throws FileNotFoundException {         String strLine = null;
          String lastlinestring="";
 
          try {

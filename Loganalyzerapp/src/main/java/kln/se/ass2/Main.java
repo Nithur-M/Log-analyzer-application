@@ -1,9 +1,16 @@
 package kln.se.ass2;
 
+import kln.se.ass2.input.CommandLineInput;
+import kln.se.ass2.input.Input;
+import kln.se.ass2.logfile.Firstreadinglog;
+import kln.se.ass2.logfile.Logfilehandler;
+import kln.se.ass2.logfile.Morereadinglog;
+import kln.se.ass2.logvariable.Log;
+import kln.se.ass2.logvariable.Logvariables;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     
@@ -11,38 +18,16 @@ public class Main {
         //getting mail address
         //Maillist ml=new Maillist();
         //ml.getmailaddress();
+      // logfilepath = "src\\main\\resources\\example.log";
 
-
-
-        Scanner input = new Scanner(System.in);
-        String logfilepath;
-
-        System.out.println("Enter log file path");
-        //   String logfilepath= input.nextLine();
-
-
-        logfilepath = "src\\main\\resources\\example.log";
-
+        Input input=new CommandLineInput();
         Textfilehandler textfilehandler = new Textfilehandler();
-
-
+        Log logvariables=new Logvariables();
+        Firstreadinglog firstreadinglog = new Firstreadinglog(textfilehandler,logvariables);
         Logfilehandler logfilehandler = null;
-
-        if (!textfilehandler.isfilecreated()) {
-            textfilehandler.createnewfile();
-            Firstreadinglog firstreadinglog = new Firstreadinglog();
-            firstreadinglog.errorchecking(logfilepath);
-        }
-        else {
-            String previoustimestamp = textfilehandler.readinglastline();
-            List<Logvariables> newlogslist = new ArrayList<Logvariables>();
-            Morereadinglog morereadinglog = new Morereadinglog();
-            newlogslist = morereadinglog.getcurrentlogstates(logfilepath, previoustimestamp);
-            if(newlogslist.isEmpty()){
-                return ;
-            }
-            morereadinglog.errorchecking(newlogslist);
-        }
+        Morereadinglog morereadinglog = new Morereadinglog(textfilehandler,logvariables);
+        LogAnalyzerApp app=new LogAnalyzerApp(textfilehandler,firstreadinglog,morereadinglog,input);
+        app.show();
 
 
 
