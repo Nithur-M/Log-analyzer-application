@@ -19,7 +19,7 @@ public class Morereadinglog extends Logfilehandler {
 
     public List<Logvariables> getcurrentlogstates(String logfilepath, String pretimestamp){
 
-            List<Logvariables> loglines = super.readfileandstore(logfilepath);
+            List<Logvariables> loglines = super.readlogfile(logfilepath);
             List<Logvariables> templog = new ArrayList<Logvariables>();
 
 

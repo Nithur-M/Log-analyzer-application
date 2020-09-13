@@ -17,7 +17,7 @@ public class Firstreadinglog extends Logfilehandler {
 
     public void errorchecking(String logfilepath) {
 
-        List<Logvariables> loglines = super.readfileandstore(logfilepath);
+        List<Logvariables> loglines = super.readlogfile(logfilepath);
         for (Logvariables s : loglines) {
             if ((s.getLoglevel()).contains("ERROR")) {
 

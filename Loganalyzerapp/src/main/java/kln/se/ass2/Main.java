@@ -15,17 +15,16 @@ import java.util.List;
 public class Main {
     
     public static void main(String[] args) throws FileNotFoundException {
-        //getting mail address
-        //Maillist ml=new Maillist();
-        //ml.getmailaddress();
-      // logfilepath = "src\\main\\resources\\example.log";
 
+//logfilepath = "src\\main\\resources\\example.log";
         Input input=new CommandLineInput();
         Textfilehandler textfilehandler = new Textfilehandler();
         Log logvariables=new Logvariables();
         Firstreadinglog firstreadinglog = new Firstreadinglog(textfilehandler,logvariables);
         Logfilehandler logfilehandler = null;
         Morereadinglog morereadinglog = new Morereadinglog(textfilehandler,logvariables);
+
+
         LogAnalyzerApp app=new LogAnalyzerApp(textfilehandler,firstreadinglog,morereadinglog,input);
         app.show();
 

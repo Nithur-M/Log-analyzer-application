@@ -1,8 +1,5 @@
 2020-09-06T17:23:09Z INFO application started
 2020-09-06T17:24:09Z ERROR an exception occurred
-2020-09-06T17:24:09Z ERROR Failed to read the text file
-2020-09-06T17:25:20Z INFO user input captured
-2020-09-06T17:26:20Z INFO calculated the average marks
+2020-09-06T17:24:09Z ERROR Failed to read the text
 2020-09-06T17:24:09Z ERROR an exception occurred
-2020-09-06T17:28:09Z ERROR an exception occurred
-2020-09-06T17:29:09Z ERROR an exception occurred
+2020-09-06T17:25:09Z ERROR Failed to read the text file

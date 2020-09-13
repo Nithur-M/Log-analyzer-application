@@ -11,7 +11,7 @@ import java.util.List;
 public abstract class Logfilehandler {
 
 
-    public  List<Logvariables> readfileandstore(String logfilepath) {
+    public  List<Logvariables> readlogfile(String logfilepath) {
 
         List<Logvariables> loglist = new ArrayList<Logvariables>();
         Logvariables logvariables;

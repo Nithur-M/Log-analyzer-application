@@ -24,6 +24,7 @@ public class LogAnalyzerApp {
 
     public void show() throws FileNotFoundException {
         String logfilepath=input.readFile();
+
         if (!textfilehandler.isfilecreated()) {
             textfilehandler.createnewfile();
             firstreadinglog.errorchecking(logfilepath);

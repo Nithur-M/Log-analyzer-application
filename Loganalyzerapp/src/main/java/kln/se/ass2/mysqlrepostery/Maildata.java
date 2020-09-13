@@ -12,7 +12,7 @@ public class Maildata implements Connect {
     private static String servername ="localhost";
     private static String username ="root";
     private static String dbname ="loganalyzerapp";
-    private static Integer portnumber = 3308;
+    private static Integer portnumber = 3306;
     private static String password ="";
     private static Object level;
 
@@ -24,7 +24,7 @@ public class Maildata implements Connect {
         datasource.setServerName(servername);
         datasource.setUser(username);
         datasource.setPassword(password);
-        datasource.setDatabaseName(dbname);
+        datasource.setDatabaseName(dbname+"?serverTimezone=UTC");
         datasource.setPortNumber(portnumber);
 
         try{
