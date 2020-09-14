@@ -29,7 +29,9 @@ public class LogAnalyzerApp {
             textfilehandler.createnewfile();
             firstreadinglog.errorchecking(logfilepath);
         }
+
         else {
+                        
             String previoustimestamp = textfilehandler.readinglastline();
             List<Logvariables> newlogslist = new ArrayList<Logvariables>();
             newlogslist = morereadinglog.getcurrentlogstates(logfilepath, previoustimestamp);

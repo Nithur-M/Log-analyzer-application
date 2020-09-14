@@ -18,10 +18,19 @@ public class Firstreadinglog extends Logfilehandler {
 
     public void errorchecking(String logfilepath) {
 
+        int errorstate=0;
         List<Logvariables> loglines = super.readlogfile(logfilepath);
         for (Logvariables s : loglines) {
             if ((s.getLoglevel()).contains("ERROR")) {
-                SendMail.sendmail();
+
+
+                if(errorstate==0) {
+                    System.out.println("Error Found");
+                    errorstate = 1;
+                    SendMail.sendmail();
+
+                }
+
             }
         }
 

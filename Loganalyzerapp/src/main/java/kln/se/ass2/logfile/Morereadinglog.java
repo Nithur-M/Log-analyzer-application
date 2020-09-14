@@ -49,7 +49,7 @@ public class Morereadinglog extends Logfilehandler {
          else{
               //Text already created new path files
              if(!(pretimestamp.equals(loglines.get(loglines.size() - 1).getTimestatmp()))) {
-                 System.out.println("Text file already created new path files");
+                 System.out.println("Text file already Now checking new path files");
                  return loglines;
              }
              else{
@@ -65,10 +65,17 @@ public class Morereadinglog extends Logfilehandler {
 
       public void errorchecking(List<Logvariables> newlog) {
 
+          int errorstate=0;
             for (Logvariables s : newlog) {
                 if ((s.getLoglevel()).contains("ERROR")) {
 
-                    SendMail sendmail = new SendMail();
+                    if(errorstate==0) {
+                        errorstate = 1;
+                        System.out.println("Error Found");
+                        SendMail.sendmail();
+                        
+                    }
+                    //Calling Email Class
 
                 }
             }

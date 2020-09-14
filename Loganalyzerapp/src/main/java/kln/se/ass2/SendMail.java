@@ -43,7 +43,7 @@ public class SendMail {
             }
 
         });
-
+        //Calling Maillist to geth the email addressess
         List<String> emailToAddresses = Maillist.getmailaddress();
         String emails = null;
 
