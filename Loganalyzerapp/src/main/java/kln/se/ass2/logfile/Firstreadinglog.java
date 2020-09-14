@@ -1,19 +1,21 @@
 package kln.se.ass2.logfile;
 
-import kln.se.ass2.SendMail;
+import kln.se.ass2.mail.Mail;
+import kln.se.ass2.mail.SendMail;
 import kln.se.ass2.logvariable.Log;
 import kln.se.ass2.logvariable.Logvariables;
-import kln.se.ass2.Textfilehandler;
+import kln.se.ass2.textcontent.Textfilehandler;
 
 import java.util.List;
 
 public class Firstreadinglog extends Logfilehandler {
     Textfilehandler textfilehandler;
     Log logvariables;
-
-    public Firstreadinglog(Textfilehandler textfilehandler, Log logvariables) {
+     Mail sentmail;
+    public Firstreadinglog(Textfilehandler textfilehandler, Log logvariables,Mail sentmail) {
       this.textfilehandler=textfilehandler;
       this.logvariables=logvariables;
+      this.sentmail=sentmail;
     }
 
     public void errorchecking(String logfilepath) {
@@ -27,7 +29,7 @@ public class Firstreadinglog extends Logfilehandler {
                 if(errorstate==0) {
                     System.out.println("Error Found");
                     errorstate = 1;
-                    SendMail.sendmail();
+                   sentmail.sendmail();
 
                 }
 

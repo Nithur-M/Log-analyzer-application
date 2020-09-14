@@ -4,6 +4,7 @@ import kln.se.ass2.input.Input;
 import kln.se.ass2.logfile.Firstreadinglog;
 import kln.se.ass2.logfile.Morereadinglog;
 import kln.se.ass2.logvariable.Logvariables;
+import kln.se.ass2.textcontent.Textfilehandler;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;

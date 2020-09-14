@@ -7,10 +7,11 @@ import kln.se.ass2.logfile.Logfilehandler;
 import kln.se.ass2.logfile.Morereadinglog;
 import kln.se.ass2.logvariable.Log;
 import kln.se.ass2.logvariable.Logvariables;
+import kln.se.ass2.mail.Mail;
+import kln.se.ass2.mail.SendMail;
+import kln.se.ass2.textcontent.Textfilehandler;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     
@@ -20,9 +21,10 @@ public class Main {
         Input input=new CommandLineInput();
         Textfilehandler textfilehandler = new Textfilehandler();
         Log logvariables=new Logvariables();
-        Firstreadinglog firstreadinglog = new Firstreadinglog(textfilehandler,logvariables);
+        Mail sendMail=new SendMail();
+        Firstreadinglog firstreadinglog = new Firstreadinglog(textfilehandler,logvariables,sendMail);
         Logfilehandler logfilehandler = null;
-        Morereadinglog morereadinglog = new Morereadinglog(textfilehandler,logvariables);
+        Morereadinglog morereadinglog = new Morereadinglog(textfilehandler,logvariables,sendMail);
 
 
         LogAnalyzerApp app=new LogAnalyzerApp(textfilehandler,firstreadinglog,morereadinglog,input);

@@ -10,10 +10,10 @@ import java.util.logging.Logger;
 
 public class Maildata implements Connect {
     private static String servername ="localhost";
-    private static String username ="nithur";
+    private static String username ="root";
     private static String dbname ="loganalyzerapp";
     private static Integer portnumber = 3306;
-    private static String password ="root";
+    private static String password ="";
     private static Object level;
 
     public static Connection getConnection() throws SQLException
