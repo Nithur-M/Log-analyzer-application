@@ -21,11 +21,17 @@ public class Textfilehandler {
 
      public void createnewfile(){
          try {
+             System.out.println("Text file created path is :- "+filepath);
              textfile.createNewFile();
          }
          catch (IOException i){
              System.out.println(i);
          }
+     }
+
+     public void deletefile(){
+         textfile.delete();
+         System.out.println("File Deleted");
      }
 
      public void writetofile(String currenttimestamp){
@@ -34,6 +40,7 @@ public class Textfilehandler {
              FileWriter fw = new FileWriter(filepath,true);
              fw.write("\n"+currenttimestamp);
              fw.close();
+             System.out.println("Current Timestamp notted to text file");
          }
          catch(Exception e){
              System.out.println(e);
@@ -53,14 +60,15 @@ public class Textfilehandler {
 
              while ((strLine = br.readLine()) != null) {
                     lastlinestring=strLine;
-
              }
+
          } catch (IOException e) {
              e.printStackTrace();
          }
 
     return lastlinestring;
     }
+
 
 
 }
