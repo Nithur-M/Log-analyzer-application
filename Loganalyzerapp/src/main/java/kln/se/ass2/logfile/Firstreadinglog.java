@@ -1,19 +1,19 @@
 package kln.se.ass2.logfile;
 
 import kln.se.ass2.mail.Mail;
-import kln.se.ass2.mail.SendMail;
 import kln.se.ass2.logvariable.Log;
 import kln.se.ass2.logvariable.Logvariables;
-import kln.se.ass2.textcontent.Textfilehandler;
+import kln.se.ass2.textcontent.Textfile;
+import kln.se.ass2.textcontent.WriteFile;
 
 import java.util.List;
 
 public class Firstreadinglog extends Logfilehandler {
-    Textfilehandler textfilehandler;
+   Textfile textfile;
     Log logvariables;
      Mail sentmail;
-    public Firstreadinglog(Textfilehandler textfilehandler, Log logvariables,Mail sentmail) {
-      this.textfilehandler=textfilehandler;
+    public Firstreadinglog(Textfile textfile, Log logvariables,Mail sentmail) {
+      this.textfile=textfile;
       this.logvariables=logvariables;
       this.sentmail=sentmail;
     }
@@ -37,7 +37,7 @@ public class Firstreadinglog extends Logfilehandler {
         }
 
         logvariables = loglines.get(loglines.size() - 1);
-        textfilehandler.writetofile(logvariables.getTimestatmp());
+        new WriteFile().writetofile(logvariables.getTimestatmp());
     }
 
 
