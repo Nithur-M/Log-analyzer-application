@@ -1,21 +1,22 @@
 package kln.se.ass2.logfile;
 
-import kln.se.ass2.SendMail;
+import kln.se.ass2.mail.Mail;
 import kln.se.ass2.logvariable.Log;
 import kln.se.ass2.logvariable.Logvariables;
-import kln.se.ass2.Textfilehandler;
+import kln.se.ass2.textcontent.Textfile;
+import kln.se.ass2.textcontent.WriteFile;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Morereadinglog extends Logfilehandler {
-      Textfilehandler textfilehandler;
+      Textfile textfile;
       Log logvariables;
-
-    public Morereadinglog(Textfilehandler textfilehandler, Log logvariables) {
-        this.textfilehandler=textfilehandler;
+      Mail sentmail;
+    public Morereadinglog(Textfile textfile, Log logvariables,Mail sentmail) {
+        this.textfile=textfile;
         this.logvariables=logvariables;
-
+        this.sentmail=sentmail;
     }
 
     public List<Logvariables> getcurrentlogstates(String logfilepath, String pretimestamp){
@@ -72,7 +73,7 @@ public class Morereadinglog extends Logfilehandler {
                     if(errorstate==0) {
                         errorstate = 1;
                         System.out.println("Error Found");
-                        SendMail.sendmail();
+                        sentmail.sendmail();
                         
                     }
                     //Calling Email Class
@@ -81,7 +82,7 @@ public class Morereadinglog extends Logfilehandler {
             }
 
              logvariables = newlog.get(newlog.size() - 1);
-            textfilehandler.writetofile(logvariables.getTimestatmp());
+            new WriteFile().writetofile(logvariables.getTimestatmp());
         }
 
 

@@ -1,4 +1,4 @@
-package kln.se.ass2;
+package kln.se.ass2.textcontent;
 
 import java.io.*;
 import java.util.Scanner;

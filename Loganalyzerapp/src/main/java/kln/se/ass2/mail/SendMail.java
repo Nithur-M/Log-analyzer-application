@@ -1,4 +1,4 @@
-package kln.se.ass2;
+package kln.se.ass2.mail;
 
 import kln.se.ass2.mysqlrepostery.Maillist;
 
@@ -13,9 +13,9 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class SendMail {
+public class SendMail implements Mail {
 
-    public static void sendmail(){
+    public void sendmail(){
 
         String from = "softconsassiment2@gmail.com";
 
