@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogAnalyzerApp {
-    Textfile textfile;
-    Firstreadinglog firstreadinglog;
-    Morereadinglog morereadinglog;
-    Input input;
+   private final Textfile textfile;
+    private final Firstreadinglog firstreadinglog;
+   private Morereadinglog morereadinglog;
+   private final Input input;
     public LogAnalyzerApp(Textfile textfile, Firstreadinglog firstreadinglog, Morereadinglog morereadinglog, Input input)
     {
         this.textfile=textfile;
