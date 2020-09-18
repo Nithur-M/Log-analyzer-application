@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Morereadinglog extends Logfilehandler {
-    private final   Textfile textfile;
-    Log log;
-     private final Mail sentmail;
-    public Morereadinglog(Textfile textfile, Log log,Mail sentmail) {
+      Textfile textfile;
+      Log logvariables;
+      Mail sentmail;
+    public Morereadinglog(Textfile textfile, Log logvariables,Mail sentmail) {
         this.textfile=textfile;
-        this.log=log;
+        this.logvariables=logvariables;
         this.sentmail=sentmail;
     }
 
@@ -81,8 +81,8 @@ public class Morereadinglog extends Logfilehandler {
                 }
             }
 
-             log = newlog.get(newlog.size() - 1);
-            new WriteFile().writetofile(log.getTimestatmp());
+             logvariables = newlog.get(newlog.size() - 1);
+            new WriteFile().writetofile(logvariables.getTimestatmp());
         }
 
 

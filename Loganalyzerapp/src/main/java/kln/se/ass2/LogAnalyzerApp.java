@@ -14,10 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogAnalyzerApp {
-   private final Textfile textfile;
-    private final Firstreadinglog firstreadinglog;
-   private Morereadinglog morereadinglog;
-   private final Input input;
+    Textfile textfile;
+    Firstreadinglog firstreadinglog;
+    Morereadinglog morereadinglog;
+    Input input;
     public LogAnalyzerApp(Textfile textfile, Firstreadinglog firstreadinglog, Morereadinglog morereadinglog, Input input)
     {
         this.textfile=textfile;
@@ -27,7 +27,7 @@ public class LogAnalyzerApp {
     }
 
     public void show() throws FileNotFoundException {
-        String logfilepath=input.readFile();
+        String logfilepath=input.readFilepath();
 
         if (!new FileExistence().isfilecreated()) {
             new CreateFile().createnewfile();
@@ -35,7 +35,6 @@ public class LogAnalyzerApp {
         }
 
         else {
-                        
             String previoustimestamp = new ReadLastLine().readinglastline();
             List<Logvariables> newlogslist = new ArrayList<Logvariables>();
             newlogslist = morereadinglog.getcurrentlogstates(logfilepath, previoustimestamp);

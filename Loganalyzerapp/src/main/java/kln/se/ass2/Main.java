@@ -20,11 +20,11 @@ public class Main {
 //logfilepath = "src\\main\\resources\\example.log";
         Input input=new CommandLineInput();
         Textfile textfile=null;
-        Log log=new Logvariables();
+        Log logvariables=new Logvariables();
         Mail sendMail=new SendMail();
-        Firstreadinglog firstreadinglog = new Firstreadinglog(textfile,log,sendMail);
+        Firstreadinglog firstreadinglog = new Firstreadinglog(textfile,logvariables,sendMail);
         Logfilehandler logfilehandler = null;
-        Morereadinglog morereadinglog = new Morereadinglog(textfile,log,sendMail);
+        Morereadinglog morereadinglog = new Morereadinglog(textfile,logvariables,sendMail);
 
 
         LogAnalyzerApp app=new LogAnalyzerApp(textfile,firstreadinglog,morereadinglog,input);

@@ -9,12 +9,12 @@ import kln.se.ass2.textcontent.WriteFile;
 import java.util.List;
 
 public class Firstreadinglog extends Logfilehandler {
-   private final Textfile textfile;
-    Log log;
-    private final Mail sentmail;
-    public Firstreadinglog(Textfile textfile, Log log,Mail sentmail) {
+   Textfile textfile;
+    Log logvariables;
+     Mail sentmail;
+    public Firstreadinglog(Textfile textfile, Log logvariables,Mail sentmail) {
       this.textfile=textfile;
-      this.log=log;
+      this.logvariables=logvariables;
       this.sentmail=sentmail;
     }
 
@@ -25,19 +25,18 @@ public class Firstreadinglog extends Logfilehandler {
         for (Logvariables s : loglines) {
             if ((s.getLoglevel()).contains("ERROR")) {
 
-
                 if(errorstate==0) {
                     System.out.println("Error Found");
                     errorstate = 1;
-                   sentmail.sendmail();
+                    sentmail.sendmail();
 
                 }
 
             }
         }
 
-        log = loglines.get(loglines.size() - 1);
-        new WriteFile().writetofile(log.getTimestatmp());
+        logvariables = loglines.get(loglines.size() - 1);
+        new WriteFile().writetofile(logvariables.getTimestatmp());
     }
 
 
